@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/index.py" }
+  ],
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{venv/**,flash_erp.db,uploads/**,**/*.csv,**/*.txt,**/*.pdf,**/*.png,**/*.jpg,**/*.jpeg,**/*.db}"
+    }
+  }
+}
